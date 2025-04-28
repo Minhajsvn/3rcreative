@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'clashDisplay';
+    src: url('/fonts/clashDisplay/ClashDisplay-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'clashDisplay';
+    src: url('/fonts/clashDisplay/ClashDisplay-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'clashDisplay';
+    src: url('/fonts/clashDisplay/ClashDisplay-Semibold.otf') format('opentype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'clashDisplay';
+    src: url('/fonts/clashDisplay/ClashDisplay-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+@import "tailwindcss";
+
