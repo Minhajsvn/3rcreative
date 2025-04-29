@@ -8,6 +8,8 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import products from '../data/products';
+import ProductCard from '../components/ProductCard';
 
 
 export default function Cart() {
@@ -99,7 +101,10 @@ export default function Cart() {
                     </button>
                 </div>
             </div>
-            
+            <div className='px-8'>
+                <h2 className='font-bold text-3xl uppercase text-center pt-16 pb-6 border-t border-gray-400'>You might also like</h2>
+                <ProductCard products={products.slice(0, 4)} />
+            </div>
             <Footer />
         </motion.div>
     )

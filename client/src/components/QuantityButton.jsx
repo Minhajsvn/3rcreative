@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function QuantityButton() {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     return (
         <div className="flex items-center space-x-4 bg-gray-200 rounded-full px-2">

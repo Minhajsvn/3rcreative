@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import ProductCard from '../components/ProductCard';
 
 
 
@@ -62,6 +63,10 @@ export default function ProductDetails() {
                         className='flex-1 w-full md:w-55 h-12 bg-black text-gray-100 rounded-3xl hover:bg-neutral-700 transition-all duration-400 cursor-pointer ml-4'>Add to Cart</button>
                     </div>  
                 </div>
+            </div>
+            <div className='px-8'>
+                <h2 className='font-bold text-3xl uppercase text-center pt-16 pb-6 border-t border-gray-400'>You might also like</h2>
+                <ProductCard products={products.slice(0, 4)} />
             </div>
             <Footer />
         </motion.div>
