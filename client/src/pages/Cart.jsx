@@ -6,6 +6,8 @@ import rightIcon from '../assets/right-arrow2.svg'
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
+import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 
 export default function Cart() {
@@ -15,7 +17,12 @@ export default function Cart() {
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     return (
-        <div>
+        <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -40 }}
+        transition={{ duration: 0.4, type: 'spring', stiffness: 100 }}
+        >
             <Navbar />
             <button 
             onClick={() => navigate('/products')}
@@ -25,7 +32,7 @@ export default function Cart() {
             </button>
 
             <h1 className='font-bold text-3xl ml-6 lg:ml-14 py-6'>Your Cart</h1>
-            <div className='w-screen md:flex justify-around items-start px-4'>
+            <div className='w-full md:flex justify-around items-start px-4 pb-16'>
                 {cartItems.length === 0 ? (
                             <div className='flex items-center mt-6 ml-16'>
                                 <p className=''>Your cart is empty.</p>
@@ -93,7 +100,7 @@ export default function Cart() {
                 </div>
             </div>
             
-            
-        </div>
+            <Footer />
+        </motion.div>
     )
 }

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProductCard({ products }) {
     return (
-        <div className='flex flex-wrap gap-25 justify-center items-center py-6'>
+        <div className='flex flex-wrap gap-25 justify-center items-center pt-6 pb-40'>
             {products.map((product) => (
                 <div key={product.id} className="w-72 h-72 cursor-pointer">
                 <Link to={`/products/${product.id}`}>

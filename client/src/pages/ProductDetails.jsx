@@ -7,6 +7,8 @@ import products from '../data/products';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
+import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 
 
@@ -27,7 +29,12 @@ export default function ProductDetails() {
     }, [id]);
 
     return (
-        <div>
+        <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -40 }}
+        transition={{ duration: 0.4, type: 'spring' }}
+        >
             <Navbar />
             <button 
             onClick={() => navigate('/products')}
@@ -36,7 +43,7 @@ export default function ProductDetails() {
                 Back to products    
             </button>
 
-            <div className='w-full md:flex justify-evenly items-start py-5 px-4 lg:px-0'>
+            <div className='w-full md:flex justify-evenly items-start pt-5 pb-10 px-4 lg:px-0'>
                 <div className='w-full md:w-2/6 rounded-2xl overflow-hidden'>
                     <img src={productDetails.image} alt={productDetails.title} className='w-full h-full object-cover' />
                 </div>
@@ -55,9 +62,8 @@ export default function ProductDetails() {
                         className='flex-1 w-full md:w-55 h-12 bg-black text-gray-100 rounded-3xl hover:bg-neutral-700 transition-all duration-400 cursor-pointer ml-4'>Add to Cart</button>
                     </div>  
                 </div>
-
-                
             </div>
-        </div>
+            <Footer />
+        </motion.div>
     )
 }
